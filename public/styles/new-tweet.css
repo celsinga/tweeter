@@ -1,0 +1,29 @@
+.input-form {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  font-size: 1.3rem;
+  background: transparent;
+  transition: border-color 0.2s;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  padding-top: 1%;
+}
+hr {
+  padding:0;
+  margin:0;
+  border-radius: 0;
+}
+
+button {
+  background-color: #4056A1;
+  color: white;
+  font-family: 'Bungee', sans-serif;
+}
+
+.button-count {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
