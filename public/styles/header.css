@@ -1,12 +1,12 @@
 header {
-  height: 400px;
+  height: 500px;
   max-width: 100%;
   background-color: #768a79;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 .avitar {
-  padding-top: 20px;
+  padding-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;

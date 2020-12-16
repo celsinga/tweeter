@@ -7,6 +7,9 @@ nav {
   justify-content: space-between;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .span1 {
   font-family: 'Bungee', sans-serif;

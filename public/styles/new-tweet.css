@@ -11,9 +11,10 @@
   padding-top: 1%;
 }
 hr {
-  padding:0;
-  margin:0;
-  border-radius: 0;
+  padding-bottom: 3;
+  margin-top: 0;
+  border-bottom-color: #545149;
+  border-bottom-width: 5px;  
 }
 
 button {
@@ -26,4 +27,11 @@ button {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
+}
+
+.new-tweet {
+  max-width: 90%;
+  padding-bottom: 20px;
+  height: 200px;
+  width: 750px;
 }

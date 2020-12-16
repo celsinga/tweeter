@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./styles/header.css" type="text/css" />
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,6 +54,40 @@
           <output name="counter" class="counter" for="tweet-text"><b>140</b></output>
         </div>
       </form>
-      </section></main>
+      </section>
+      <section class="tweets-index" id="tweets">
+        <article>
+          <header>
+            <span class="header-top">
+              <div class="tweet-name"><img src="./images/profile-icon.png">Newton</div>
+              <div class="tweet-handle">@SirIsaac</div>
+            </span>
+            <span>
+              <div class="tweet-content">I can calculate the motion of heavenly bodies, but not the madness of people.</div>
+            </span>
+          </header>
+          <footer>
+            <div class="days-since-post">10 days ago</div>
+            <div class="repost-tweet">(repost)</div>
+          </footer>
+        </article>
+        <article>
+          <header>
+            <span class="header-top">
+              <div class="tweet-name"><img src="./images/profile-icon.png">Tesla</div>
+              <div class="tweet-handle">@Nicola</div>
+            </span>
+            <span>
+              <div class="tweet-content">The present is theirs; the future, for which I really worked, is mine.</div>
+            </span>
+          </header>
+          <footer>
+            <div class="days-since-post">27 days ago</div>
+            <div class="repost-tweet">(repost)</div>
+          </footer>
+        </article>
+        
+      </section>
+    </main>
   </body>
 </html>
