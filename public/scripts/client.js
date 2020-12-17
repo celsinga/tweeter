@@ -5,28 +5,28 @@
  */
 
 const tweets = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@Descartes" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
+  // {
+  //   "user": {
+  //     "name": "Newton",
+  //     "avatars": "https://i.imgur.com/73hZDYK.png"
+  //     ,
+  //     "handle": "@SirIsaac"
+  //   },
+  //   "content": {
+  //     "text": "If I have seen further it is by standing on the shoulders of giants"
+  //   },
+  //   "created_at": 1461116232227
+  // },
+  // {
+  //   "user": {
+  //     "name": "Descartes",
+  //     "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //     "handle": "@Descartes" },
+  //   "content": {
+  //     "text": "Je pense , donc je suis"
+  //   },
+  //   "created_at": 1461113959088
+  // }
 ];
 
 $(document).ready(function() {
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $.ajax({
       type: 'GET',
       url: '/tweets',
-      success: function(data) {
+      success: function(data, err) {
         renderTweets(data);
       }
     });
@@ -73,9 +73,15 @@ $(document).ready(function() {
       url: '/tweets',
       data: $(this).serialize(),
       success: function() {
-        $('.tweets-index').html("");loadTweets();
+        if (this.data.length > 145) {
+          alert("Tweet character limit exceeded. Please keep tweet under 140 characters.");
+        } else {
+          $('.tweets-index').html("");loadTweets();
+        }
+      },
+      error: function() {
+        alert("Tweet contains no content!");
       }
     })
-    .then(console.log("complete"));
   });
 });
