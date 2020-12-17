@@ -10,7 +10,7 @@ article header .header-top {
   background: transparent;
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   margin: 10px 10px;
 }
 

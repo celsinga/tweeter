@@ -33,7 +33,6 @@ $(document).ready(function() {
   const renderTweets = function(tweets){
     for(const obj of tweets){
       let returnVal = createTweetElement(obj);
-      console.log(returnVal);
       $('.tweets-index').append(returnVal);
     }
   }
@@ -57,5 +56,26 @@ $(document).ready(function() {
     return $(html);
   }
 
-  renderTweets(tweets);
-})
+  const loadTweets = function() {
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      success: function(data) {
+        renderTweets(data);
+      }
+    });
+  }
+
+  $('.tweet-box').submit(function(evt) {
+    evt.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(this).serialize(),
+      success: function() {
+        $('.tweets-index').html("");loadTweets();
+      }
+    })
+    .then(console.log("complete"));
+  });
+});
