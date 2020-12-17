@@ -44,7 +44,7 @@ article footer {
 .tweets-index {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   max-width: 90%;
 }

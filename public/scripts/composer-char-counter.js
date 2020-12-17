@@ -1,3 +1,4 @@
+// Counts tweet characters
 $(document).ready(function() {
   console.log("Document Ready");
   let form = document.getElementById("tweet-text");

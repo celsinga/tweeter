@@ -1,42 +1,20 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-const tweets = [
-  // {
-  //   "user": {
-  //     "name": "Newton",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png"
-  //     ,
-  //     "handle": "@SirIsaac"
-  //   },
-  //   "content": {
-  //     "text": "If I have seen further it is by standing on the shoulders of giants"
-  //   },
-  //   "created_at": 1461116232227
-  // },
-  // {
-  //   "user": {
-  //     "name": "Descartes",
-  //     "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //     "handle": "@Descartes" },
-  //   "content": {
-  //     "text": "Je pense , donc je suis"
-  //   },
-  //   "created_at": 1461113959088
-  // }
-];
+// All code for the script is inside this doc.ready function:
 
 $(document).ready(function() {
+  // Renders tweets to page
   const renderTweets = function(tweets){
     for(const obj of tweets){
       let returnVal = createTweetElement(obj);
       $('.tweets-index').append(returnVal);
     }
+  };
+  // Escaping function
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   }
-
+  // Create tweet HTML
   const createTweetElement = function (object) {
     const html = `<article>
     <header>
@@ -45,7 +23,7 @@ $(document).ready(function() {
         <div class="tweet-handle">${object.user.handle}</div>
       </span>
       <span>
-        <div class="tweet-content">${object.content.text}</div>
+        <div class="tweet-content">${escape(object.content.text)}</div>
       </span>
     </header>
     <footer>
@@ -55,7 +33,7 @@ $(document).ready(function() {
   </article>`;
     return $(html);
   }
-
+  //AJAX get tweets
   const loadTweets = function() {
     $.ajax({
       type: 'GET',
@@ -65,19 +43,20 @@ $(document).ready(function() {
       }
     });
   }
-
+ //AJAX post tweets
   $('.tweet-box').submit(function(evt) {
     evt.preventDefault();
+    const input = $('#tweet-text').val()
+    if (input.length > 140) {
+      alert("Tweet character limit exceeded. Please keep tweet under 140 characters.");
+      return;
+    }
     $.ajax({
       type: 'POST',
       url: '/tweets',
       data: $(this).serialize(),
       success: function() {
-        if (this.data.length > 145) {
-          alert("Tweet character limit exceeded. Please keep tweet under 140 characters.");
-        } else {
-          $('.tweets-index').html("");loadTweets();
-        }
+        $('.tweets-index').html("").append($("<p></p>"));loadTweets();
       },
       error: function() {
         alert("Tweet contains no content!");

@@ -32,6 +32,7 @@
       <span class="span2"><b>Write</b> a new tweet</span>
     </nav>
 
+     <!-- Profile header -->
     <header>
       <div class="avitar">
           <img src="./images/profile-hex.png"> 
@@ -41,11 +42,12 @@
           <span><b>My</b> Name</span>
       </div>
     </header>
-    <!-- Page-specific (main) content here -->
+
+    <!-- Create New Tweet form -->
     <main class="container">
       <section class="new-tweet">
-      <h2></h2>
-      <form class="tweet-box" method="POST" action="/tweets/">
+        <div class="error-message"></div>
+        <form class="tweet-box" method="POST" action="/tweets/">
         <label for="tweet-text"><b id="message">What are you humming about?</b></label>
         <textarea class="input-form" name="text" id="tweet-text"></textarea>
         <hr>
@@ -55,6 +57,8 @@
         </div>
       </form>
       </section>
+
+      <!-- New Tweets index -->
       <section class="tweets-index" id="tweets">
         
       </section>
