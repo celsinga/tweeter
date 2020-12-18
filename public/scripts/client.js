@@ -1,6 +1,8 @@
 // All code for the script is inside this doc.ready function:
 
 $(document).ready(function() {
+  // temporary:
+  $('.error-message').hide();
   // Renders tweets to page
   const renderTweets = function(tweets){
     for(const obj of tweets){
@@ -48,7 +50,7 @@ $(document).ready(function() {
     evt.preventDefault();
     const input = $('#tweet-text').val()
     if (input.length > 140) {
-      alert("Tweet character limit exceeded. Please keep tweet under 140 characters.");
+      $('.error-message').slideDown();
       return;
     }
     $.ajax({
@@ -56,11 +58,16 @@ $(document).ready(function() {
       url: '/tweets',
       data: $(this).serialize(),
       success: function() {
-        $('.tweets-index').html("").append($("<p></p>"));loadTweets();
+        $('.tweets-index').html("");loadTweets();
       },
       error: function() {
-        alert("Tweet contains no content!");
+        $('.error-message').slideDown();
       }
     })
   });
+  //Slide error message up after input box click
+  const btn = $('#tweet-text');
+  btn.on('click', () => {
+    $('.error-message').slideUp();
+  })
 });

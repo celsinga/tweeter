@@ -30,8 +30,30 @@ button {
 }
 
 .new-tweet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   max-width: 90%;
   padding-bottom: 20px;
+  padding-top: 20px;
   height: 200px;
-  width: 750px;
+  width: 800px;
 }
+
+.tweet-box {
+  padding-top: 15px;
+}
+
+/* Error message box */
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  color: red;
+  border: solid;
+  border-color: red;
+  border-width: 5px;
+  height: 40px;
+  font-size: smaller;
+}
+

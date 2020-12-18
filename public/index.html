@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="./styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="./styles/all.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +30,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="span1">tweeter</span>
-      <span class="span2"><b>Write</b> a new tweet</span>
+      <span class="span2">
+        <p><b>Write</b> a new tweet</p>
+        <button type="submit"><i class="fas fa-angle-double-down"></i></button>
+      </span>
     </nav>
 
      <!-- Profile header -->
@@ -46,7 +50,7 @@
     <!-- Create New Tweet form -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error-message"></div>
+        <div class="error-message">Invalid tweet! Please submit a tweet that is between 1 and 140 characters.</div>
         <form class="tweet-box" method="POST" action="/tweets/">
         <label for="tweet-text"><b id="message">What are you humming about?</b></label>
         <textarea class="input-form" name="text" id="tweet-text"></textarea>
