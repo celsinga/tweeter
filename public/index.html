@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -32,6 +33,7 @@
       <span class="span1">tweeter</span>
       <span class="span2">
         <p><b>Write</b> a new tweet</p>
+        <button type="submit" class="create-tweet-button"><img src="./images/downarrows.png" alt="Submit"></button>
       </span>
     </nav>
 
@@ -49,7 +51,7 @@
     <!-- Create New Tweet form -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error-message">Invalid tweet! Please submit a tweet that is between 1 and 140 characters.</div>
+        <div class="error-message"><img src="./images/warning.png">Invalid tweet! Please submit a tweet that is between 1 and 140 characters.<img src="./images/warning.png"></div>
         <form class="tweet-box" method="POST" action="/tweets/">
         <label for="tweet-text"><b id="message">What are you humming about?</b></label>
         <textarea class="input-form" name="text" id="tweet-text"></textarea>

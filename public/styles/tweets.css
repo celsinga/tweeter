@@ -12,6 +12,7 @@ article header .header-top {
   justify-content: space-between;
   height: 80px;
   margin: 10px 10px;
+
 }
 
 article header .tweet-content {
@@ -27,6 +28,7 @@ article header {
   border-bottom-width: 5px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
 }
 
 article footer {
@@ -35,10 +37,17 @@ article footer {
   font-size: 14px;
 }
 
+article footer img {
+  width: 3%;
+}
+
+.repost-tweet {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .tweet-name img {
-  width: 35%;
-  min-width: 35%;
-  padding-right: 20px;
+  width: 1em;
 }
 
 .tweets-index {

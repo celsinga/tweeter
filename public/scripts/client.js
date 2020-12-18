@@ -21,7 +21,7 @@ $(document).ready(function() {
     const html = `<article>
     <header>
       <span class="header-top">
-        <div class="tweet-name"><img src="${object.user.avatars}">${object.user.name}</div>
+        <div class="tweet-name"><img src="${object.user.avatars}">&nbsp;${object.user.name}</div>
         <div class="tweet-handle">${object.user.handle}</div>
       </span>
       <span>
@@ -30,7 +30,7 @@ $(document).ready(function() {
     </header>
     <footer>
       <div class="days-since-post">${object.created_at}</div>
-      <div class="repost-tweet">(repost)</div>
+      <div class="repost-tweet"><img src="./images/finish.png">&nbsp;<img src="./images/process-arrows.png">&nbsp;<img src="./images/heart.png"></div>
     </footer>
   </article>`;
     return $(html);

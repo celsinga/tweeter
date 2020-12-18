@@ -48,12 +48,17 @@ button {
 
 .error-message {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   color: red;
   border: solid;
   border-color: red;
   border-width: 5px;
-  height: 40px;
+  height: 80px;
   font-size: smaller;
+}
+.error-message img {
+  height: 1em;
+  width: 1em;
 }
 
