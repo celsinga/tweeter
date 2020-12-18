@@ -4,8 +4,8 @@ $(document).ready(function() {
   // temporary:
   $('.error-message').hide();
   // Renders tweets to page
-  const renderTweets = function(tweets){
-    for(const obj of tweets){
+  const renderTweets = function(tweets) {
+    for (const obj of tweets) {
       let returnVal = createTweetElement(obj);
       $('.tweets-index').append(returnVal);
     }
@@ -15,7 +15,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   // Convert Date data
   const dateConverter = function(unix) {
     let date = new Date(unix);
@@ -23,7 +23,7 @@ $(document).ready(function() {
     return fdate;
   };
   // Create tweet HTML
-  const createTweetElement = function (object) {
+  const createTweetElement = function(object) {
     const html = `<article>
     <header>
       <span class="header-top">
@@ -40,7 +40,7 @@ $(document).ready(function() {
     </footer>
   </article>`;
     return $(html);
-  }
+  };
   //AJAX get tweets
   const loadTweets = function() {
     $.ajax({
@@ -50,11 +50,11 @@ $(document).ready(function() {
         renderTweets(data);
       }
     });
-  }
- //AJAX post tweets
+  };
+  //AJAX post tweets
   $('.tweet-box').submit(function(evt) {
     evt.preventDefault();
-    const input = $('#tweet-text').val()
+    const input = $('#tweet-text').val();
     if (input.length > 140) {
       $('.error-message').slideDown();
       return;
@@ -69,11 +69,11 @@ $(document).ready(function() {
       error: function() {
         $('.error-message').slideDown();
       }
-    })
+    });
   });
   //Slide error message up after input box click
   const btn = $('#tweet-text');
   btn.on('click', () => {
     $('.error-message').slideUp();
-  })
+  });
 });

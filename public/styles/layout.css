@@ -20,9 +20,7 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
 
 .container {
    max-width: 90%;
@@ -37,7 +35,26 @@ body {
    padding-top: 15px;
  }
 
- /* Media querys */
+ @media screen and (min-width: 1024px) {
+   .page-content {
+     display: flex;
+     justify-content: space-evenly;
+     padding-top: 150px;
+     padding-left: 20px;
+   }
+   .pic {
+     width: 40%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     border-radius: 10%;
+     padding-top: 0;
+   }
+   .container {
+     /* padding-top: 150px; */
+     width: 60%;
+   }
+ }
 
  @media screen and (min-width: 1024px) {
    .page-content {
