@@ -1,5 +1,7 @@
 nav {
-  background-color: #4056A1;
+  background-color: #768a79;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* background-color: #4056A1; */
   height: 140px;
   color: #FFF;
   display: flex;
@@ -22,6 +24,8 @@ nav {
 
 .create-tweet-button {
   border: none;
+  background: transparent;
+  border-color:#768a79;
 }
 
 .create-tweet-button img {
@@ -29,4 +33,17 @@ nav {
   width: 1em;
   font-size: 18px;
   filter: invert(30%) sepia(96%) saturate(7424%) hue-rotate(5deg) brightness(97%) contrast(127%);
+}
+
+/* Media querys */
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  .create-tweet-button {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }

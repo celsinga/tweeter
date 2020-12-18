@@ -16,6 +16,12 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
+  // Convert Date data
+  const dateConverter = function(unix) {
+    let date = new Date(unix);
+    let fdate = date.getFullYear() + '/' + ("0" + (date.getMonth() + 1)).slice(-2) + '/' + ("0" + date.getDate()).slice(-2);
+    return fdate;
+  };
   // Create tweet HTML
   const createTweetElement = function (object) {
     const html = `<article>
@@ -29,7 +35,7 @@ $(document).ready(function() {
       </span>
     </header>
     <footer>
-      <div class="days-since-post">${object.created_at}</div>
+      <div class="days-since-post">${dateConverter(object.created_at)}</div>
       <div class="repost-tweet"><img src="./images/finish.png">&nbsp;<img src="./images/process-arrows.png">&nbsp;<img src="./images/heart.png"></div>
     </footer>
   </article>`;

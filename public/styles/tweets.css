@@ -28,6 +28,7 @@ article header {
   border-bottom-width: 5px;
   display: flex;
   flex-direction: column;
+  padding-top: 0px;
   padding-bottom: 10px;
 }
 
