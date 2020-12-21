@@ -30,6 +30,7 @@ article header {
   flex-direction: column;
   padding-top: 0px;
   padding-bottom: 10px;
+  word-break: break-word;
 }
 
 article footer {

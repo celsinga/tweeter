@@ -1,8 +1,9 @@
 // All code for the script is inside this doc.ready function:
 
 $(document).ready(function() {
-  // temporary:
+
   $('.error-message').hide();
+  $('.new-tweet').hide();
   // Renders tweets to page
   const renderTweets = function(tweets) {
     for (const obj of tweets) {
@@ -51,6 +52,7 @@ $(document).ready(function() {
       }
     });
   };
+  loadTweets();
   //AJAX post tweets
   $('.tweet-box').submit(function(evt) {
     evt.preventDefault();
@@ -65,15 +67,24 @@ $(document).ready(function() {
       data: $(this).serialize(),
       success: function() {
         $('.tweets-index').html("");loadTweets();
+        $('.new-tweet').slideUp();
       },
       error: function() {
         $('.error-message').slideDown();
       }
     });
+    $('#tweet-text').val('');
+    $('.counter').val('140');
   });
   //Slide error message up after input box click
   const btn = $('#tweet-text');
   btn.on('click', () => {
     $('.error-message').slideUp();
   });
+
+  const newTweetBtn = $('.create-tweet-button');
+  newTweetBtn.on('click', () => {
+    $('.new-tweet').slideDown();
+  })
+
 });
