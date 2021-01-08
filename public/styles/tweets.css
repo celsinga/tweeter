@@ -12,7 +12,6 @@ article header .header-top {
   justify-content: space-between;
   height: 80px;
   margin: 10px 10px;
-
 }
 
 article header .tweet-content {
@@ -46,6 +45,7 @@ article footer img {
 .repost-tweet {
   display: flex;
   justify-content: flex-end;
+  opacity: 0.3;
 }
 
 .tweet-name img {
@@ -63,4 +63,10 @@ article footer img {
 article:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-1px) scale(1);
+  border: solid;
+}
+
+
+article:hover .repost-tweet {
+  opacity: 1;
 }

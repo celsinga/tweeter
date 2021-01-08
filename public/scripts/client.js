@@ -42,6 +42,7 @@ $(document).ready(function() {
   </article>`;
     return $(html);
   };
+  
   //AJAX get tweets
   const loadTweets = function() {
     $.ajax({
@@ -66,7 +67,8 @@ $(document).ready(function() {
       url: '/tweets',
       data: $(this).serialize(),
       success: function() {
-        $('.tweets-index').html("");loadTweets();
+        $('.tweets-index').html("");
+        loadTweets();
         $('.new-tweet').slideUp();
       },
       error: function() {
@@ -82,9 +84,27 @@ $(document).ready(function() {
     $('.error-message').slideUp();
   });
 
+  let newTweetIsDown = false;
   const newTweetBtn = $('.create-tweet-button');
-  newTweetBtn.on('click', () => {
-    $('.new-tweet').slideDown();
-  })
+
+  if (!newTweetIsDown) {
+    newTweetBtn.on('click', () => {
+      $('.new-tweet').slideDown();
+      newTweetIsDown = true;
+    });
+  }
+
+  if (newTweetIsDown) {
+    newTweetBtn.on('click', () => {
+      $('.new-tweet').slideUp();
+      newTweetIsDown = false;
+    });
+  }
+
+  // Retween, like, save buttons show on hover of tweet
+  // const showRetweetBtns = $('article');
+  // showRetweetBtns.on('mouseover', () => {
+  //   $('.repost-tweet').show();
+  // });
 
 });
